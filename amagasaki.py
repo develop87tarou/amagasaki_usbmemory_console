@@ -29,8 +29,6 @@ while True:
 					print ("page-"+page2+"/46000")
 				else:
 					print ("アクセス拒否")
-			else:
-				print("数値エラー。1~46000の数値を入力")
 	elif a == "access main security":
 		pas = input("パスワード>")
 		if pas == "amagasaki2022":
