@@ -9,7 +9,7 @@ while True:
 	a = input(">")
 	if a == "access main memory":
 			page = int(input("ページ(1~46000)>"))
-			if page <= 0:
+			if page <= 0 and page >=46001:
 				print("数値エラー。1~46000の数値を入力")
 			elif page < 46000:
 				pas = str(input("パスワード>"))
