@@ -121,6 +121,7 @@ while True:
 	elif a == "access":
 		print ("access (対象)")
 		print ("詳細はhelpコマンドを使用してください")
+		#この辺りをなんとかしたいけど今日はいいや
 	elif a == "access sub systems":
 		print("外部電力供給-1-off/on 予備電源残量-2")
 		sub = input("サブシステム>")
