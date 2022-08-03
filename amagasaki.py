@@ -104,27 +104,38 @@ while True:
 				print("予備電力残量")
 				print(battery)
 		else:
-			print("使用するにはブレーカーを再起動してください")
+			if  breaker == "on":
+				print("ブレーカーオン")
+			else:
+				print("ブレーカーオフ")
+			if door == "on":
+				print("ドアロックオン")
+			else:
+				print("ドアロックオフ")
+			if power == "on":
+				print("電力が供給されています")
+			else:
+				print("電力が供給されていません")
+				print("予備電力残量")
+				print(battery)
 	elif a == "access":
 		print ("access (対象)")
 		print ("詳細はhelpコマンドを使用してください")
 	elif a == "access sub systems":
-		if breaker == "on":
-			print("外部電力供給-1-off/on 予備電源残量-2")
-			sub = input("サブシステム>")
-			if sub == "1 off":
-				print("電力供給オフ")
-				power = "off"
-			elif sub == "1 on":
-				print("電力供給オン")
-				power = "on"
-			elif sub == "2":
-				print("予備電力残量")
-				print(battery)
-			else:
-				print("エラー")
+		print("外部電力供給-1-off/on 予備電源残量-2")
+		sub = input("サブシステム>")
+		if sub == "1 off":
+			print("電力供給オフ")
+			power = "off"
+		elif sub == "1 on":
+			print("電力供給オン")
+			power = "on"
+		elif sub == "2":
+			print("予備電力残量")
+			print(battery)
+		else:
+			print("エラー")
 		elif breaker == "off":
-			print("使用するにはブレーカーを再起動してください")
 	elif a == "system reboot":
 		while reboot < 30:
 			print()
