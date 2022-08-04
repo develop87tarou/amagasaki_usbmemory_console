@@ -11,10 +11,14 @@ while True:
 	print ("===============================")
 	battery2  = str(battery)
 	if breaker == "off":
-		door = "off"
-		print("ドアロック解除")
-		print("現在ブレーカーが停止しています。電源操作以外の機能が停止しています。")
-		print("system rebootを使用し再起動するか、電力供給を止め強制的にシステムを終了させてください。")
+		if power == "on":
+			door = "off"
+			print("ドアロック解除")
+			print("現在ブレーカーが停止しています。電源操作以外の機能が停止しています。")
+			print("system rebootを使用し再起動するか、電力供給を止め強制的にシステムを終了させてください。")
+		else:
+			print("電力なし")
+			break
 	if power == "off" and battery <= 0:
 		print("電力なし")	
 		break
@@ -121,7 +125,6 @@ while True:
 	elif a == "access":
 		print ("access (対象)")
 		print ("詳細はhelpコマンドを使用してください")
-		#この辺りをなんとかしたいけど今日はいいや
 	elif a == "access sub systems":
 		print("外部電力供給-1-off/on 予備電源残量-2")
 		sub = input("サブシステム>")
@@ -136,7 +139,6 @@ while True:
 			print(battery)
 		else:
 			print("エラー")
-		elif breaker == "off":
 	elif a == "system reboot":
 		while reboot < 30:
 			print()
